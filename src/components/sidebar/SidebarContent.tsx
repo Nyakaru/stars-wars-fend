@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 
 import CustomScrollbars from "../../components/customScrollBar";
 import SidebarLogo from "./SidebarLogo";
-import UserProfile from "./UserProfile";
-import AppsNavigation from "./AppsNavigation";
 import { NaVitems } from "./NavItems";
 
 const SubMenu = Menu.SubMenu;
@@ -16,10 +14,6 @@ const SidebarContent = () => {
     <>
       <SidebarLogo />
       <div className="gx-sidebar-content">
-        <div className="gx-sidebar-notifications">
-          <UserProfile />
-          <AppsNavigation />
-        </div>
         <CustomScrollbars className="gx-layout-sider-scrollbar">
           <Menu mode="inline">
             <MenuItemGroup key="main" className="gx-menu-group" title="Menu">

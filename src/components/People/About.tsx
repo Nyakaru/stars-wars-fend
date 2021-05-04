@@ -49,7 +49,7 @@ const About = (props) => {
   const {
     person: { name, height, mass, gender },
     homeworld: {
-      name: homewordName,
+      name: homeworldName,
       orbital_period,
       rotation_period,
       diameter,
@@ -93,7 +93,7 @@ const About = (props) => {
                 <TabPane tab="Homeworld " key="2">
                   <Descriptions bordered column={1} size={"small"}>
                     <Descriptions.Item label="Name">
-                      {homewordName}
+                      {homeworldName}
                     </Descriptions.Item>
                     <Descriptions.Item label="Population">
                       {population}
@@ -113,7 +113,7 @@ const About = (props) => {
                     <Descriptions.Item label="Surface Water">
                       {surface_water}
                     </Descriptions.Item>
-                    <Descriptions.Item label="Rotational">
+                    <Descriptions.Item label="Rotational Period">
                       {rotation_period}
                     </Descriptions.Item>
                     <Descriptions.Item label="Orbital period">
