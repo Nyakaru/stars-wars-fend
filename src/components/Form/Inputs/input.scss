@@ -1,0 +1,11 @@
+.phone-input {
+  input {
+    height: 36px;
+    border: 1px solid hsl(0, 0%, 85%);
+    border-radius: 6px;
+  }
+  input:focus {
+    outline: none !important;
+    border-color: #719ece;
+  }
+}
