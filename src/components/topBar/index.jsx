@@ -2,39 +2,14 @@ import React from "react";
 import { Layout, Popover } from "antd";
 import { Link } from "react-router-dom";
 
-import { toggleCollapsedSideNav } from "../../store/actions/settings";
 import SearchBox from "../../components/searchBox";
 import UserInfo from "../../components/userInfo";
-import { useAppState, useAppDispatch } from "../../store/";
-
-import {
-  NAV_STYLE_DRAWER,
-  NAV_STYLE_FIXED,
-  NAV_STYLE_MINI_SIDEBAR,
-  TAB_SIZE,
-} from "../../constants/themeSettings";
 
 const { Header } = Layout;
 
 const Topbar = () => {
-  const appState = useAppState();
-  const dispatch = useAppDispatch();
-  const { width, navCollapsed, navStyle } = appState.settingsReducer;
-
   return (
     <Header>
-      {navStyle === NAV_STYLE_DRAWER ||
-      ((navStyle === NAV_STYLE_FIXED || navStyle === NAV_STYLE_MINI_SIDEBAR) &&
-        width < TAB_SIZE) ? (
-        <div className="gx-linebar gx-mr-3">
-          <i
-            className="gx-icon-btn icon icon-menu"
-            onClick={() => {
-              toggleCollapsedSideNav(!navCollapsed, dispatch);
-            }}
-          />
-        </div>
-      ) : null}
       <Link to="/" className="gx-d-block gx-d-lg-none gx-pointer">
         <img alt="" src="" />
       </Link>
@@ -63,13 +38,9 @@ const Topbar = () => {
             </span>
           </Popover>
         </li>
-        {width >= TAB_SIZE ? null : (
-          <>
-            <li className="gx-user-nav">
-              <UserInfo />
-            </li>
-          </>
-        )}
+        <li className="gx-user-nav">
+          <UserInfo />
+        </li>
       </ul>
     </Header>
   );

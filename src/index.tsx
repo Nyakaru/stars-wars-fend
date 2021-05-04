@@ -6,19 +6,16 @@ import { Route, Switch, BrowserRouter } from "react-router-dom";
 import "./index.css";
 import App from "./pages/app";
 import reportWebVitals from "./reportWebVitals";
-import { AppProvider } from "./store";
 import { client } from "./client";
 
 ReactDOM.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
-      <AppProvider>
-        <BrowserRouter>
-          <Switch>
-            <Route path="/" component={App} />
-          </Switch>
-        </BrowserRouter>
-      </AppProvider>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" component={App} />
+        </Switch>
+      </BrowserRouter>
     </ApolloProvider>
   </React.StrictMode>,
   document.getElementById("root")

@@ -11,11 +11,7 @@ const PeopleTable: React.FC<TableProps> = (props) => {
       title: "Star Name",
       dataIndex: "name",
       key: "name",
-      render: (text) => (
-        <Link to="/about/all">
-          <a>{text}</a>
-        </Link>
-      ),
+      render: (text: string) => <Link to={`/people/${text}`}>{text}</Link>,
     },
     {
       title: "Height",
@@ -31,10 +27,10 @@ const PeopleTable: React.FC<TableProps> = (props) => {
       title: "Gender",
       key: "gender",
       dataIndex: "gender",
-      render: (text) => {
+      render: (text: string) => {
         return (
           <Tag color="green" key={text}>
-            {text}
+            {text.toUpperCase()}
           </Tag>
         );
       },
@@ -52,12 +48,6 @@ const PeopleTable: React.FC<TableProps> = (props) => {
         responsive: true,
         onChange: props.onChange,
       }}
-      // onRow={() => {
-      //   return {
-      //     onClick: props.onRow, // click row
-      //   }
-      // }
-      // }
     />
   );
 };

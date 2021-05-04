@@ -17,3 +17,6 @@ code {
   background: #fff;
   padding: 0;
 }
+.ant-layout-sider-children {
+  background: #064b91;
+}
