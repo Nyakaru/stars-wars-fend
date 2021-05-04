@@ -1,3 +1,5 @@
+import { QueryResult } from "@apollo/client";
+
 export interface Person {
   name: string;
   height: string;
@@ -23,21 +25,22 @@ export interface PeopleResponse {
 }
 
 export interface PersonResponse {
-  searchPerson: Person;
+  searchPerson: {
+    person: Person;
+    homeworld: Planet;
+  };
 }
 
-export interface PlanetResponse {
-  homeworld: Planet;
-}
+export type FetchPersonResponse = Omit<QueryResult, "data"> & {
+  data: PersonResponse;
+};
 
 export interface TableProps {
   tableData: Array<Person>;
   onChange: (page: number) => void;
   current: number;
-  onRow: (record: Person) => void;
 }
 
-export type SelectOption = {
-  label: string;
-  value: string;
-};
+export interface Params {
+  name: string;
+}

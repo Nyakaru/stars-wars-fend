@@ -1,6 +1,4 @@
-# school-agenda-front
-
-This is the frontend application for the school management system
+# stars-wars-fend
 
 ## Available Scripts
 

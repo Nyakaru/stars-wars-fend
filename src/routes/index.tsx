@@ -10,8 +10,12 @@ export interface AppProps {
 const App: React.FC<AppProps> = ({ routMatch }) => (
   <div className="gx-main-content-wrapper">
     <Switch>
-      <Route path={`${routMatch.url}about/all`} component={AboutPage} />
-      <Route path={`${routMatch.url}people/all`} component={PeoplePage} />
+      <Route
+        exact
+        path={`${routMatch.url}people/:name`}
+        component={AboutPage}
+      />
+      <Route exact path={`${routMatch.url}`} component={PeoplePage} />
     </Switch>
   </div>
 );

@@ -1,5 +1,6 @@
 export interface PageSideBarProps {
   pageTitle: string;
+  onFilterOptionSelect: Function;
 }
 
 export interface SideBarOption {
